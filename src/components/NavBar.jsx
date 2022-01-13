@@ -4,13 +4,15 @@ import {FaBars} from 'react-icons/fa'
 import { Nav, NavLink, Bars, NavMenu,
     NavBtn, NavBtnLink} from './NavStyles';
 
+import CartWidget from './CartWidget';
+
 
 const NavBar = () => {
     return (
         <>
             <Nav>
                 <NavLink to="/">
-                    <h1>Logo</h1>
+                    <h3>Logo</h3>
 
                 </NavLink>
                 <Bars/>
@@ -31,12 +33,19 @@ const NavBar = () => {
                     <NavLink to="/Ayuda" activeStyle>
                         Ayuda
                     </NavLink>
+                        <NavBtn>
+                         <NavBtnLink to="/Shopping"><CartWidget /></NavBtnLink>
+                        </NavBtn>
+                        <NavBtn>
+                            <NavBtnLink to="/Ingresar"><h5>Ingresar</h5></NavBtnLink>
+                        </NavBtn>  
 
 
                 </NavMenu>
-                    <NavBtn>
-                        <NavBtnLink to="/Ingresar">Ingresar</NavBtnLink>
-                    </NavBtn>
+                
+                    
+                    
+                    
 
             </Nav>
 
