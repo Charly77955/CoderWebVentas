@@ -11,3 +11,15 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.Bloque{padding:'50%';  
+  left: 30%;
+  vertical-align:middle;
+  position: fixed;
+  align-items:flex-end;
+  padding: 10%;
+  border-color: tomato;
+  margin: 10%;
+  background-color:whitesmoke
+};
+  

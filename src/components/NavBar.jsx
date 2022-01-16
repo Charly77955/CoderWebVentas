@@ -1,10 +1,11 @@
 import React from "react";
-
+import Carrito from './ShoppingCart.js'
 import {FaBars} from 'react-icons/fa'
 import { Nav, NavLink, Bars, NavMenu,
     NavBtn, NavBtnLink} from './NavStyles';
 
 import CartWidget from './CartWidget';
+
 
 
 const NavBar = () => {
@@ -34,7 +35,8 @@ const NavBar = () => {
                         Ayuda
                     </NavLink>
                         <NavBtn>
-                         <NavBtnLink to="/Shopping"><CartWidget /></NavBtnLink>
+                         <NavBtnLink to="Carrito"  target="_blank"><CartWidget /></NavBtnLink>
+                         
                         </NavBtn>
                         <NavBtn>
                             <NavBtnLink to="/Ingresar"><h5>Ingresar</h5></NavBtnLink>
