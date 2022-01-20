@@ -1,29 +1,23 @@
 import React, { Component } from 'react';
 
-class ProductStyle extends Component () {
+const cardStyle = {width: '45em'}
+
+class ProductStyle extends Component{
     render() {
+        console.log(this.props.i)
         return (
 
-            <div class="row">
-                <div class="col s12 m7">
-                    <div class="card">
-                        <div class="card-image">
-                            <img src="images/sample-1.jpg" />
-                            <span class="card-title">Card Title</span>
-                        </div>
-                        <div class="card-content">
-                            <p>I am a very simple card. I am good at containing small bits of information.
-                                I am convenient because I require little markup to use effectively.</p>
-                        </div>
-                        <div class="card-action">
-                            <a href="#">This is a link</a>
-                        </div>
-                    </div>
+            <div className="card m-3" style={cardStyle}>
+                <img src={this.props.item.imagen} className="card-img-top img-thumbnail" width="300px"/>
+                <div className="card-body">
+                    <h5 className="card-title">{this.props.item.titulo}</h5>
+                    {/* <div>{this.props}</div> */}
+                    <p className="card-text">{this.props.item.descripcion}</p>
+                    <a href="#" className="btn btn-primary">{this.props.item.precio}</a>
                 </div>
-
             </div>
         );
     };
 };
 
-export default ProductList;
+export default ProductStyle;

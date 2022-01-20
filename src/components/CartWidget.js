@@ -6,7 +6,7 @@ import react from 'react';
      render() {
          return (
              <div>
-                 <i className="material-icons">shopping_cart
+                 <i className="material-icons text-primary">shopping_cart
                     </i>
              </div>
          )

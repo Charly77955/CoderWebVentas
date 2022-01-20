@@ -1,10 +1,9 @@
 import React from 'react';
 import './App.css';
-import NavBar from './components/NavBar';
+import NavBar from './components/NavBar/Navbar';
 import Productos from './components/ProductList/ItemListContainer';
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import Carrito from './components/ShoppingCart';
-import 'materialize-css/dist/css/materialize.min.css';
 
 function App() {
   return (
@@ -19,9 +18,11 @@ function App() {
      <Route path="Carrito" element={<Carrito/>}/>
       
      <Route/>
-     
+     <Route path="productos" element={<Productos/>}/>
+      
+     <Route/>
      </Routes>
-     <Productos/>
+     
      </Router>
        
   );
