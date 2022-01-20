@@ -24,12 +24,12 @@ const disminuir = () => {
             <h4>Indique cantidad</h4>
             <h4>{Carrito}</h4>
             
-            <div className='Valor'>
+            
             <button onClick={() => setCarrito(initialCount=0)}>Reset</button>
             <button onClick={aumentar}>+</button>
             <button onClick={disminuir}>-</button>
             </div>
-            </div>
+            
     )
     }
     export default Carrito;
