@@ -3,7 +3,11 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+<<<<<<< HEAD
 import 'materialize-css/dist/css/materialize.min.css';
+=======
+
+>>>>>>> 0218a63 (Para chequear-CarlosDeSantis)
 
 ReactDOM.render(
   <React.StrictMode>
