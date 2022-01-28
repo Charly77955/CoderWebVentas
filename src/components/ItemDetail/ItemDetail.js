@@ -13,10 +13,10 @@ export default function ItemDetail () {
             resolve(
                 {
                     id: '1',
-                    titulo: 'Set matero',
-                    descripcion: 'Set matero con mate, termo, bombilla y bolso para llevar incluido',
+                    titulo: 'Fernet Branca 3Lts',
+                    descripcion: 'Fernet Branca 3Lts tamaño fiesta para que nunca se termine',
                     precio: '$2000',
-                    imagen: 'https://image.freepik.com/foto-gratis/te-infusible-sobre-madera_144627-20539.jpg'
+                    imagen: 'https://http2.mlstatic.com/D_NQ_NP_666183-MLA43135791187_082020-O.webp'
                 }
         )}, 2000)
     });
