@@ -40,7 +40,7 @@ export default function Productos() {
                         precio: '$1500',
                         imagen: 'https://http2.mlstatic.com/D_NQ_NP_18147-MLA20150915734_082014-O.webp'
                     },
-                    {
+                    { 
                         id: '5',
                         titulo: 'Vaso medidor Fernet Branca',
                         descripcion: 'Vaso medidor Fernet Branca para armarlo con la medida exacta y disfrutarlo mejor',
