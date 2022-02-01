@@ -2,13 +2,13 @@
 
 
 .Bloque{padding:'50%';  
-  left: 30%;
-  vertical-align:middle;
-  position: fixed;
-  align-items:flex-end;
-  padding: 10%;
+  left: 0%;
+  vertical-align:top;
+  position: relative;
+  align-items:flex;
+  padding: 0%;
   border-color: tomato;
-  margin: 10%;
-  background-color:whitesmoke
+  margin: 5%;
+  
 };
   

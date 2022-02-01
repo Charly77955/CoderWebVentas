@@ -2,9 +2,7 @@
 import React, { useEffect, useState, onAdd } from "react";
 import ProductStyle from "../ProductList/ProductStyle";
 import { ItemDetailStyle } from "./ItemDetailStyle";
-import Carrito from "../Carrito";
 import { Link } from "react-router-dom";
-import Contador from "../CarritoEnItemDetail";
 
 export default function ItemDetail() {
 
@@ -48,35 +46,5 @@ export default function ItemDetail() {
             }
            
         </div>
-    )
-        function Contador({Carrito}) {
-
-        const [mostrarCarrito, setMostrarCarrito] = useState(true);
-        
-        function onAdd(Cantidad){
-            alert('Agregar' + Cantidad);
-            setMostrarCarrito(false);
-        }
-        return (
-            <>
-                
-                {
-                    (mostrarCarrito)?
-                    <Carrito Carrito={Carrito} onAdd={onAdd}/>
-                    :
-                    
-                        <button>Terminar compra</button>
-                        
-                        
-                    
-                }
-                
-            </>
-    
-        );
-    
-    
-    
-    }
-    
+    )         
 }
