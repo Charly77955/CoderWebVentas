@@ -5,13 +5,13 @@ import Productos from './components/ProductList/ItemListContainer';
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import Carrito from './components/Carrito';
 import ItemDetail from './components/ItemDetail/ItemDetail';
+import CartProvider from './components/Context/CartProvider';
 
 function App() {
   return (
+    
+    <CartProvider>
     <Router>
-     
-     
-     
      <NavBar/>
      <Routes>
      
@@ -23,15 +23,10 @@ function App() {
      <Route path="ItemDetail" element={<ItemDetail/>}/>
 
      <Route path="productos" element={<Productos/>}/>
-     
-
-
-     
      <Route/>
      </Routes>
-     
      </Router>
-       
+     </CartProvider>
   );
 }
 

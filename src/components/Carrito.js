@@ -1,8 +1,6 @@
 
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import ItemDetail from './ItemDetail/ItemDetail';
-
-
 
 
 function Carrito() {

@@ -8,7 +8,7 @@ export const ItemDetailStyle = (props) => {
 
     function onAdd(cantidad) {
         alert('agregar ' + cantidad);
-        // setItemCount(false);
+        
     }
     const aumentar = () => {
         if (contador < 5) {
