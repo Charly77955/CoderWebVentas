@@ -1,6 +1,5 @@
 
-import react from 'react';
- import React, { Component } from 'react'
+ import React, { Component } from 'react';
  
   class CartWidget extends Component {
      render() {
@@ -13,5 +12,5 @@ import react from 'react';
      }
  }
  
- export default CartWidget
+ export default CartWidget;
  

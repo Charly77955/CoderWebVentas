@@ -1,10 +1,13 @@
-import React, {useState} from "react";
+import React, {useContext, useState} from "react";
 import ItemCount from "../ItemCount/ItemCount";
 import { Link } from "react-router-dom";
+import { cartContext } from '../Context/CartProvider';
 
 export const ItemDetailStyle = (props) => {
     const { item } = props;
     const [contador, setContador] = useState(0);
+
+    const { addToCart } = useContext(cartContext)
 
     function onAdd(cantidad) {
         alert('agregar ' + cantidad);
@@ -34,12 +37,16 @@ export const ItemDetailStyle = (props) => {
                 <div className="col-md-8">
                     <div className="card-body">
                         <h5 className="card-title">{item?.titulo}</h5>
-                        <p className="card-text">Fernet Branca 3Lts tamaño fiesta para que nunca se termine</p>
-                        <p className="card-text"><small className="text-muted">Consulte sobre metodos de envio y costo</small></p>
-                        <p className="card-text"><small className="text-muted">Cantidad: {contador}</small></p>
+                        <span className="card-text">Fernet Branca 3Lts tamaño fiesta para que nunca se termine</span>
+                        <span className="card-text"><small className="text-muted">Consulte sobre metodos de envio y costo</small></span>
+                        <br/>
+                        <br/>
+                        <span className="card-text"><small className="text-muted">Cantidad: {contador}</small></span>
                         {contador< 5 ?
-                        <p className="Carro"><ItemCount Suma={aumentar} Resta={disminuir} /></p>
-                        : <Link to="/Carrito"><button type="button" class="btn btn-success">Finalizar compra</button></Link>                        
+                        <span className="Carro"><ItemCount Suma={aumentar} Resta={disminuir} /></span>
+                        : 
+                        <Link to="/Cart"><br/><button type="button" onClick={() => addToCart(item, contador)} 
+                        className="btn btn-success">Finalizar compra</button></Link>                        
                         }
                     </div>
                     

@@ -3,7 +3,7 @@ import './App.css';
 import NavBar from './components/NavBar/Navbar';
 import Productos from './components/ProductList/ItemListContainer';
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
-import Carrito from './components/Carrito';
+import Cart from './components/Carro/Cart';
 import ItemDetail from './components/ItemDetail/ItemDetail';
 import CartProvider from './components/Context/CartProvider';
 
@@ -16,7 +16,7 @@ function App() {
      <Routes>
      
      
-     <Route path="Carrito" element={<Carrito/>}/>
+     <Route path="Cart" element={<Cart/>}/>
       <Route path="Detallebtn" element={<ItemDetail/>}/>
 
      <Route/>

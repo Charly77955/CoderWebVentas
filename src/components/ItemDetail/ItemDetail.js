@@ -1,13 +1,16 @@
 
-import React, { useEffect, useState, onAdd } from "react";
+import React, { useEffect, useState, useContext} from "react";
 import ProductStyle from "../ProductList/ProductStyle";
 import { ItemDetailStyle } from "./ItemDetailStyle";
 import { Link } from "react-router-dom";
+import Productos from "../ProductList/ItemListContainer";
 
 export default function ItemDetail() {
 
+
     const [PromesaDetallesbtn, setPromesaDetallesbtn] = useState(false)
     const [DetalleProducto, setDetalleProducto] = useState(null)
+  
 
     const Detallesbtn = new Promise((resolve, reject) => {
         setTimeout(() => {
@@ -29,7 +32,7 @@ export default function ItemDetail() {
             setDetalleProducto(res);
         })
     }, [])
-
+      
     return (
         <div>
             

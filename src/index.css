@@ -2,13 +2,18 @@
 
 
 .Bloque{padding:'50%';  
-  left: 0%;
-  vertical-align:top;
+  left: 10%;
+ 
   position: relative;
   align-items:flex;
   padding: 0%;
-  border-color: tomato;
+  
   margin: 5%;
+  display:block;
+  
+
+  
   
 };
+
   

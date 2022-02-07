@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import CartWidget from '../CartWidget'
+import CartWidget from '../Carro/CartWidget'
 import { Link } from "react-router-dom";
 
 
@@ -16,7 +16,7 @@ import { Link } from "react-router-dom";
                 <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                   <li className="nav-item">
                       <Link to="Productos">
-                        <p className="nav-link active" aria-current="page">Home</p>
+                        <span className="nav-link active" aria-current="page">Home</span>
                       </Link>
                   </li>
                   <li className="nav-item">
@@ -38,9 +38,9 @@ import { Link } from "react-router-dom";
                   </li>
                 </ul>
                 <div className="d-flex">
-                    <Link to="Carrito">
-                        <CartWidget to="Carrito"></CartWidget>
-                    </Link>
+                    
+                    <Link id="RouterNavLink" style={null} to="/Cart"><CartWidget/></Link>
+                    
                 </div>
               </div>
             </div>
@@ -49,5 +49,5 @@ import { Link } from "react-router-dom";
     }
 }
 
-export default Navbar
+export default Navbar;
 
