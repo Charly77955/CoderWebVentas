@@ -1,52 +1,42 @@
-import React, { useEffect, useState, useContext} from "react";
-import ProductStyle from "../ProductList/ProductStyle";
-import { ItemDetailStyle } from "./ItemDetailStyle";
-import { Link } from "react-router-dom";
-import Productos from "../ProductList/ItemListContainer";
-
-export default function ItemDetail() {
+import React, { useState, useEffect } from "react";
+import { getFirestore } from "../../firebase/firebase"
 
 
-    const [PromesaDetallesbtn, setPromesaDetallesbtn] = useState(false)
-    const [DetalleProducto, setDetalleProducto] = useState(null)
-  
+export default function ItemListContainer() {
 
-    const Detallesbtn = new Promise((resolve, reject) => {
-        setTimeout(() => {
-            resolve(
-                {
-                    id: '1',
-                    titulo: 'Fernet Branca 3Lts',
-                    descripcion: 'Fernet Branca 3Lts tamaño fiesta para que nunca se termine',
-                    precio: '$2000',
-                    imagen: 'https://http2.mlstatic.com/D_NQ_NP_666183-MLA43135791187_082020-O.webp'
-                }
-            )
-        }, 2000)
-    });
+    const [itemsFire, setItemsFire ] = useState({});
 
     useEffect(() => {
-        Detallesbtn.then(res => {
-            setPromesaDetallesbtn(true);
-            setDetalleProducto(res);
+
+        const db = getFirestore();
+
+        const itemsFireCollection = db.collection("ItemsFire");
+        
+
+        itemsFireCollection.get()
+        .then((querySnapShot) => {
+
+            if (querySnapShot.size === 0) {
+                console.log('no hay documentos con ese query');
+                return
+            } 
+            console.log('hay documentos');
+            
+            
+            setItemsFire(querySnapShot.docs.map((doc)=> {
+                return {id: doc.id,...doc.data()}
+            }));
+        } )
+        .catch((err)=>{
+            console.log(err);
         })
     }, [])
-      
-    return (
-        <div>
-            
-            {(PromesaDetallesbtn) ?
-                <ItemDetailStyle  key={DetalleProducto?.id} item={DetalleProducto}></ItemDetailStyle>
-                :
-                <div className="spinner-border" role="status">
-                    <span className="visually-hidden">Loading...</span>
-                    
-                </div>
-                
-                
-                
-            }
-           
-        </div>
-    )         
+
+    
+return (
+    <>
+    {JSON.stringify(itemsFire)}
+    </>
+    
+);
 }
