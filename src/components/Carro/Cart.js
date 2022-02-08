@@ -16,9 +16,9 @@ function Cart() {
       <div>
         <>
           {cart.length === 0 ?
-            <div>
+            <div> 
               <span>Empty Cart</span>
-              <Link to="/productos">Go to shop!</Link>
+              <button type="button" class="btn btn-info"><Link to="/productos">Go to shop!</Link></button>
             </div>
             :
             <div>

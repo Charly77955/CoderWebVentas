@@ -3,7 +3,12 @@ import { cartContext } from '../Context/CartProvider';
 import Productos from '../ProductList/ItemListContainer';
 
 const CartItem = ( {Productos} ) => {
-  
+
+  const sumarTodo = () =>{
+
+    return cartContext.map((item) => item.item.precio * item.contador).reduce((a,b) => a + b)
+  }
+
   const {deleteItem} = useContext(cartContext);
   console.log(Productos)
   return (

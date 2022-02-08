@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
+
 const cardStyle = {width: '45em'}
 
 class ProductStyle extends Component{

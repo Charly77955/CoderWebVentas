@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState, useContext} from "react";
 import ProductStyle from "../ProductList/ProductStyle";
 import { ItemDetailStyle } from "./ItemDetailStyle";
