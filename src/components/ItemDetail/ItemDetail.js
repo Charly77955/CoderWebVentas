@@ -1,42 +1,38 @@
-import React, { useState, useEffect } from "react";
-import { getFirestore } from "../../firebase/firebase"
+import React, { useEffect, useState, useContext} from "react";
+import ProductStyle from "../ProductList/ProductStyle";
+import { ItemDetailStyle } from "./ItemDetailStyle";
+import { Link, useParams } from "react-router-dom";
+import Productos from "../Productos/Productos.json";
 
+export default function ItemDetail(props) {    
+    const params = useParams();
+    const id = params.id;
+    const [producto, setProducto] = useState(null);
+    const [PromesaDetallesbtn, setPromesaDetallesbtn] = useState(false);
 
-export default function ItemListContainer() {
+    useEffect(()=>{
+        let prodSeleccionado = Productos.Productos.filter(x => x.id === id);
+        if(prodSeleccionado){
+            setProducto(prodSeleccionado[0])
+            setPromesaDetallesbtn(true);
+        }
+    }, []);
 
-    const [itemsFire, setItemsFire ] = useState({});
-
-    useEffect(() => {
-
-        const db = getFirestore();
-
-        const itemsFireCollection = db.collection("ItemsFire");
-        
-
-        itemsFireCollection.get()
-        .then((querySnapShot) => {
-
-            if (querySnapShot.size === 0) {
-                console.log('no hay documentos con ese query');
-                return
-            } 
-            console.log('hay documentos');
+    return (
+        <div>
             
-            
-            setItemsFire(querySnapShot.docs.map((doc)=> {
-                return {id: doc.id,...doc.data()}
-            }));
-        } )
-        .catch((err)=>{
-            console.log(err);
-        })
-    }, [])
-
-    
-return (
-    <>
-    {JSON.stringify(itemsFire)}
-    </>
-    
-);
+            {(PromesaDetallesbtn) ?
+                <ItemDetailStyle item={producto}></ItemDetailStyle>
+                :
+                <div className="spinner-border" role="status">
+                    <span className="visually-hidden">Loading...</span>
+                    
+                </div>
+                
+                
+                
+            }
+           
+        </div>
+    )         
 }

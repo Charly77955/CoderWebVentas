@@ -1,15 +1,18 @@
 
- import React, { Component } from 'react';
+ import React, { useState, useContext, useEffect } from 'react';
+ import { cartContext } from "../Context/CartProvider";
  
-  class CartWidget extends Component {
-     render() {
+  function CartWidget() {
+    const { cart } = useContext( cartContext );
+
          return (
-             <div>
-                 <i className="material-icons text-primary">shopping_cart
-                    </i>
-             </div>
+            <>
+            {cart.length == 0 ? <></> : <div>
+                 <i className="material-icons text-primary">shopping_cart</i>
+                 <span>{cart.length}</span>
+             </div>}
+            </>
          )
-     }
  }
  
  export default CartWidget;
