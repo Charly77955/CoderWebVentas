@@ -1,6 +1,8 @@
 import React, { createContext, useState } from 'react';
+import IniciarFireBase from '../../firebase/IniciarFireBase';
 import Productos from '../ProductList/ItemListContainer';
 import ProductStyle from '../ProductList/ProductStyle';
+import { db } from '../../firebase/firebase';
 
 export const cartContext = createContext();
 
@@ -29,8 +31,6 @@ const CartProvider = ({ children }) => {
        return cart.map((item) => item.item.precio * item.contador).reduce((a , b) => a + b)
      }
 
-    //  const updatedCart = cart.filter(element => element.item.id !== id)
-      // setCart(updatedCart);
   }
 
   const isInCart = (id) => {
@@ -41,7 +41,7 @@ const CartProvider = ({ children }) => {
   }
 
   return (
-    <cartContext.Provider value={{ cart, addToCart, deleteItem, deleteItem, sumarTodo }}>
+    <cartContext.Provider value={{ cart, addToCart, deleteItem, deleteItem, sumarTodo, clearCart }}>
       {children}
     </cartContext.Provider>
   )

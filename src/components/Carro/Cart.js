@@ -7,8 +7,8 @@ import { ItemDetailStyle } from '../ItemDetail/ItemDetailStyle';
 import Productos from '../ProductList/ItemListContainer';
 import CartItem from './CartItem';
 
-
 function Cart() {
+ 
   const { cart, clearCart, sumarTodo } = useContext( cartContext );
 
   const [total, setTotal] = useState(0);
@@ -43,3 +43,17 @@ function Cart() {
   )
 }
 export default Cart;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
