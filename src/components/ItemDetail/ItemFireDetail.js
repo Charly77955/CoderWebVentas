@@ -1,13 +1,15 @@
 import React, {useState, useEffect } from "react";
 import { getFirestore } from "../../firebase/firebase"
 import { useParams } from "react-router-dom";
+import { ItemDetailStyle } from "./ItemDetailStyle";
 
 export default function ItemFireDetail(){
     
     const params = useParams();
     const id = params.id;
 
-    const [item, setItem] = useState([]);
+    const [PromesaDetallesbtn, setPromesaDetallesbtn] = useState(false);
+    const [producto, setProducto] = useState(2);
 
     useEffect(() => {
         const db = getFirestore();
@@ -19,16 +21,15 @@ export default function ItemFireDetail(){
         miItem.get()
         .then((doc) => {
 
-            console.log({id:doc.id, ...doc.data()})
-
+            
             if(!doc.exists) {
                 console.log('no existe ese documento');
                 return
             }
-
-            let obj = {id:doc.id, ...doc.data()}
-            setItem(obj);
-            console.log(item);
+            
+            const obj = {id:doc.id, ...doc.data()}
+            setProducto(obj)
+            setPromesaDetallesbtn(true);
         })
         .catch((err) =>{
             console.log(err);
@@ -37,7 +38,21 @@ export default function ItemFireDetail(){
 
     return (
         <>
-            
+                     <div>
+          
+          {(PromesaDetallesbtn) ?
+              <ItemDetailStyle item={producto}></ItemDetailStyle>
+              :
+              <div className="spinner-border" role="status">
+                  <span className="visually-hidden">Loading...</span>
+               
+              </div>
+           
+           
+           
+          }
+      
+      </div>
         </>
     
     );

@@ -1,5 +1,5 @@
 import React, { createContext, useState } from 'react';
-import IniciarFireBase from '../../firebase/IniciarFireBase';
+
 import Productos from '../ProductList/ItemListContainer';
 import ProductStyle from '../ProductList/ProductStyle';
 import { db } from '../../firebase/firebase';

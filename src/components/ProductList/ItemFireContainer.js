@@ -18,7 +18,7 @@ export default function ItemFireContainer() {
         itemsFireCollection.get()
         .then((querySnapShot) => {
 
-            console.log(querySnapShot.docs)
+            
 
             if (querySnapShot.size === 0) {
                 console.log('no hay documentos con ese query');
