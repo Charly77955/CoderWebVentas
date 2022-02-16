@@ -8,6 +8,7 @@ import Cart from './components/Carro/Cart';
 import CartProvider from './components/Context/CartProvider';
 import ItemFireContainer from './components/ProductList/ItemFireContainer';
 import ItemFireDetail from './components/ItemDetail/ItemFireDetail';
+import TestForm from './components/Tests/TestForm';
 
 
 
@@ -16,24 +17,24 @@ function App() {
   
   return (
     
+    
     <CartProvider>
     <Router>
-     <NavBar/>
+     <NavBar/>  
      <Routes>
-     
-     
+      
      <Route path="Cart" element={<Cart/>}/>
       <Route path="Detallebtn" element={<ItemFireDetail/>}/>
-      
-
+    
      <Route/>
      <Route path="ItemDetail/:id" element={<ItemFireDetail />}/>
-
+     
      <Route path="productos" element={<ItemFireContainer/>}/>
      <Route/>
      </Routes>
      </Router>
      </CartProvider>
+     
   );
   
 }

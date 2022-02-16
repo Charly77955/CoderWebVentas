@@ -6,12 +6,15 @@ import { Link } from "react-router-dom";
 import { ItemDetailStyle } from '../ItemDetail/ItemDetailStyle';
 import Productos from '../ProductList/ItemListContainer';
 import CartItem from './CartItem';
+import TestForm from '../Tests/TestForm';
+import { getFirestore } from '../../firebase/firebase';
 
 function Cart() {
  
   const { cart, clearCart, sumarTodo } = useContext( cartContext );
 
   const [total, setTotal] = useState(0);
+  
 
   useEffect(() =>{
     if(cart.length != 0){
@@ -35,11 +38,14 @@ function Cart() {
               <button className="btn btn-primary" onClick={() => clearCart()}>Clear cart</button>
               <p>Total: {total}</p>
             </div>
+
+           
           }
+          <TestForm total={total}/>
         </>
       </div>
     </div>
-
+    
   )
 }
 export default Cart;
