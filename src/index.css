@@ -1,5 +1,13 @@
 
+  
 
+
+
+
+.container-fluid{
+  background-color:#1f1d1d;
+  justify-content: space-between;
+}
 
 .Bloque{padding:'50%';  
   left: 10%;
